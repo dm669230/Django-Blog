@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 
@@ -17,54 +18,27 @@
         </header>
         <p> Hi, I am Vibhu and I love anime, tech and football</p>
     </section>
-
+    
     <section id="latest-posts">
-        <h2>My Thaughts</h2>
+        <h2>My Latest Thaughts</h2>
         <ul>
-            
-            {% include "blog/includes/post.html" %}
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+             
         </ul>
     </section>
+    
 
     <section id="about">
         <h2>What I Do</h2>
-
-       
-        <p> I love programming, I love to help others and i enjoy exploring new things and technogies in every aspect!
+        <p>
+            I love programming, I love to help others and i enjoy exploring new things and technogies in every aspect!
         </p>
         <p>
             My goal is to keep growing and keep learning new things as developer,
             eventually i want to become great personel!
-
         </p>
-
     </section>
-
-    <section id="Welcome">
-        <header>
-            <img src="{% static "blog/images/coding.jpg" %}" alt="My Hobby Coding"/>
-            <h2> My Latest Thaughts </h2>
-        </header>
-            <p>Hi, I am Vibhu, I love programming, I love to help others and i enjoy exploring new things and technogies in every aspect! </p>
-    </section>
-
-    <section id="Latest Post">
-        <h2>My First Anime</h2>
-
-        <ul>
-            <li>
-                <artical class="post">
-                    <a href="">
-                        <img src="{% static "blog/image/death_note.jpg"%}" alt="Death Note"/>
-                        <div class="post_content">
-                            <h3> I dont exactly remember when I first started watching anime, but it was last year or so and my brother suggested to watch demon slayer because he really loved it and the animations on it are sickkkkk. And couldn't stop watching it since then. also I rly love the fact that every single demon had a depressing and sad past and they just get killed by tanjiro and Nezuko. The next one I watched was spy x family. and Anya is soo tricking cutee aaaoihwrgwirgpehogh.
-                            </p>
-                        </div>
-                    </a>
-                </artical>
-            </li>
-        </ul>
-    </section>
-        
 {% endblock %}
 

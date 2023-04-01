@@ -1,14 +1,15 @@
-{%load static%}
-<link rel="stylesheet" href="{% static "blog/includes/post.css" %}"/>
+{% load static %}
+<link rel="stylesheet" href="{% static "blog/includes/post.css" %}">
 <li>
-    <artical class="post">
-        <a href="">
-            <img src="{% static "blog/images/mountains.jpeg"%}" alt="Valley Of Flowers"/>
-            <div class="post_content">
-                <h3> Valley of Flowers</h3> 
-                <p> The myriad patches of vivid colors under the watchful eyes of the towering snow-capped Himalayas. Heavenly! Isn't it? With over 300 species of flora and numerous species of endangered flowers and medicinal plants, the valley is no short of an enchantress perched idyllically to cast a spell on the visitors. Believe us your Valley of flowers trek 2022 will be an experience to remember. But reaching this fairy hinterland of Uttarakhand is no child's play. It is a trek; strenuous and moderate difficulties.
+    <article class="post">
+        <a href="{% url "post-detail-page" post.slug %}">
+            <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}"/>
+            <div class="post__content">
+                <h3> {{post.title}}</h3> 
+                <p> 
+                    {{ post.excerpt}}
                 </p>
             </div>
         </a>
-    </artical>
+    </article>
 </li>
